@@ -22,13 +22,22 @@ export function generatePrompt(formValues: { [key: string]: string }) {
       'Add any extra notes or formatting instructions, e.g., "Use markdown syntax for headings"'
     ] || '';
 
-  return `
-    In the role of ${role}, your primary task is to ${task}. Specifically, ${specificDetails}.
-    
-    To give you some context, ${context}. Here are some examples to guide you: ${examples}.
-    
-    Additionally, please take into account the following notes: ${extraNotes}.
-    
-    By following these guidelines, you will be able to create a comprehensive and well-structured output. Thank you.
-  `.trim();
+  return (
+    'In the role of ' +
+    role +
+    ', your primary task is to ' +
+    task +
+    '. Specifically, ' +
+    specificDetails +
+    '.\n\n' +
+    'To give you some context, ' +
+    context +
+    '. Here are some examples to guide you: ' +
+    examples +
+    '.\n\n' +
+    'Additionally, please take into account the following notes: ' +
+    extraNotes +
+    '.\n\n' +
+    'By following these guidelines, you will be able to create a comprehensive and well-structured output. Thank you.'
+  );
 }
